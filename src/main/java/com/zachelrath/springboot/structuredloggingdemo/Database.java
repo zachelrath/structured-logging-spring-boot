@@ -1,8 +1,11 @@
 package com.zachelrath.springboot.structuredloggingdemo;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Arrays;
 import java.util.List;
 
+@Service
 public class Database {
 
     public List<OrderItem> getItemsForOrder(String orderNumber) {

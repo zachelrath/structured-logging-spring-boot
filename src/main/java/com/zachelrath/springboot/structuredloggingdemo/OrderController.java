@@ -6,6 +6,7 @@ import org.apache.logging.log4j.CloseableThreadContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.Required;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +15,12 @@ import java.util.List;
 public class OrderController {
 
     private static final Logger logger = LogManager.getLogger(OrderController.class);
-    private static final Database d = new Database();
+    private Database d;
+
+    @Autowired
+    public OrderController(Database database) {
+        this.d = database;
+    }
 
     @RequestMapping(
             value = "/order/{retailer}/{orderNumber}/items",
