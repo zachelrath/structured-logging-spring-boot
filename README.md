@@ -2,6 +2,8 @@
 
 This app provides examples of how to do structured, contextual logging in Spring Boot apps using Log4j2.
 
+If you're here to check out the code, the main controller is located here: [OrderController](./src/main/java/com/zachelrath/springboot/structuredloggingdemo/OrderController.java). 
+
 ## Build and run
 
 - From Command Line: `mvn spring-boot:run`
