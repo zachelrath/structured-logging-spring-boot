@@ -14,3 +14,45 @@ This app provides examples of how to do structured, contextual logging in Spring
 
 [{"id":"1234","sku":"chair-blue","description":"Very comfy chair","quantity":null}]
 ```
+
+This should log the following structured JSON logs to the console, containing the context `retailer` and `orderNumber` in the thread `contextMap`: 
+
+```shell
+{
+  "instant" : {
+    "epochSecond" : 1636639189,
+    "nanoOfSecond" : 190833000
+  },
+  "thread" : "http-nio-8080-exec-1",
+  "level" : "INFO",
+  "loggerName" : "com.zachelrath.springboot.structuredloggingdemo.OrderController",
+  "message" : "Getting items",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "contextMap" : {
+    "orderNumber" : "123",
+    "retailer" : "acme"
+  },
+  "threadId" : 24,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1636639189,
+    "nanoOfSecond" : 193742000
+  },
+  "thread" : "http-nio-8080-exec-1",
+  "level" : "INFO",
+  "loggerName" : "com.zachelrath.springboot.structuredloggingdemo.OrderController",
+  "message" : "Got items, returning",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "contextMap" : {
+    "orderNumber" : "123",
+    "retailer" : "acme"
+  },
+  "threadId" : 24,
+  "threadPriority" : 5
+}
+
+```
