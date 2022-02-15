@@ -40,20 +40,27 @@ This should log the following structured JSON logs to the console, containing th
 }
 {
   "instant" : {
-    "epochSecond" : 1636639189,
-    "nanoOfSecond" : 193742000
+    "epochSecond" : 1644940436,
+    "nanoOfSecond" : 805370000
   },
   "thread" : "http-nio-8080-exec-1",
   "level" : "INFO",
   "loggerName" : "com.zachelrath.springboot.structuredloggingdemo.OrderController",
-  "message" : "Got items, returning",
+  "message" : {
+    "totalItems" : 1,
+    "items" : [ {
+      "id" : "1234",
+      "sku" : "chair-blue",
+      "description" : "Very comfy chair"
+    } ]
+  },
   "endOfBatch" : false,
   "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
   "contextMap" : {
     "orderNumber" : "123",
     "retailer" : "acme"
   },
-  "threadId" : 24,
+  "threadId" : 27,
   "threadPriority" : 5
 }
 

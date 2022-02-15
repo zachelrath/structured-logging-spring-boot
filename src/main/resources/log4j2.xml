@@ -2,7 +2,7 @@
 <Configuration status="WARN" monitorInterval="30">
     <Appenders>
         <Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
-            <JsonLayout complete="false" compact="false" eventEol="true" properties="true"  />
+            <JsonLayout complete="false" compact="false" eventEol="true" properties="true" objectMessageAsJsonObject="true" />
         </Console>
     </Appenders>
     <Loggers>
